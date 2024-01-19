@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <script src="./assets/js/main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="start" style="display: flex;">
+        <img class="startPhoto" src="./assets/images/startPhoto.png" />
+        <h1>Click for PLAY!</h1>
+    </div>
+    <div class="game" style="display: none;">
+        <h1 class="heading">RPS</h1>
+        <h2 class="description">Please select the number of players</h2>
+        <div class="selectPlayerNumber">
+            <div class="onePlayer">
+                <img class="onePlayerPhoto" src="./assets/images/onefinger-removebg-preview.png" />
+                <h2>One player</h2>
+            </div>
+            <div class="twoPlayer">
+                <img class="twoPlayerPhoto" src="./assets/images/twofinger-removebg-preview.png" />
+                <h2>Two player</h2>
+            </div>
+        </div>
+        <div class="gameWithOnePlayer" style="display: none;">
+            <div class="score">
+                <div class="yourScoreOnePlayer">
+                    <p>YOU</p>
+                    <p id="yourScoreOnePLayer">0</p>
+                </div>
+                <div class="winsAndLoses">
+                    <div class="winsOne">
+                        <span>WINS :</span>
+                        <span id="wins">0</span>
+                    </div>
+                    <div class="losesOne">
+                        <span>LOSES :</span>
+                        <span id="loses">0</span>
+                    </div>
+                </div>
+                <div class="aiScoreOnePlayer">
+                    <p>AI</p>
+                    <p id="aiScoreOnePlayer">0</p>
+                </div>
+            </div>
+            <section>
+                <div class="gameMain">
+                    <div class="gameImages">
+                        <img class="firstImage" src="./assets/images/rock-removebg-preview.png" />
+                        <img class="secondImage" src="./assets/images/rock-removebg-preview.png" />
+                    </div>
+                    <div class="buttons">
+                        <button class="rockButton">R</button>
+                        <button class="paperButton">P</button>
+                        <button class="scsButton">S</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="gameWithTwoPlayer" style="display: none;">
+            <h1>twoo</h1>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+.start{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.startPhoto{
+    width: 500px;
+    transition: 0.5s;
+}
+.start h1{
+    font-size: 50px;
+    color: #FFF200;
+}
+.startPhoto:hover{
+    width: 530px;
+    transition: 0.5s;
+}
+/*-----------------*/
+body{
+    background-color: blanchedalmond;
+}
+.game .heading{
+    font-size: 60px;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #FFF200;
+    text-shadow: 3px 2px #000;
+}
+.game .description{
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 4px 4px #FFF200;
+    padding-bottom: 50px;
+}
+.selectPlayerNumber{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-left: 20px;
+}
+.onePlayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.onePlayer h2{
+    font-size: 40px;
+    color: #000;
+    text-shadow: 3px 2px #FFF200;
+}
+.twoPlayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.twoPlayer h2{
+    margin-right: 50px;
+    font-size: 40px;
+    color: #000;
+    text-shadow: 3px 2px #FFF200;
+}
+
+
+
+.score{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+.yourScoreOnePlayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aiScoreOnePlayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.winsAndLoses{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.winsOne span{
+    font-size: 30px;
+}
+.losesOne span{
+    font-size: 30px;
+}
+.yourScoreOnePlayer{
+    font-size: 30px;
+}
+.aiScoreOnePlayer{
+    font-size: 30px;
+}
+.gameMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gameMain .gameImages{
+    display: flex;
+    gap: 300px;
+}
+.gameMain .firstImage , .secondImage{
+    width: 400px;
+}
+.buttons{
+    display: flex;
+    gap: 100px;
+}
+.buttons button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1px solid gray;
+    background-color: #FFF200;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
