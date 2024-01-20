@@ -10,7 +10,8 @@
 }
 .start h1{
     font-size: 50px;
-    color: #FFF200;
+    color: #fff;
+    text-shadow: 3px 3px #000;
 }
 .startPhoto:hover{
     width: 530px;
@@ -61,60 +62,126 @@ body{
     text-shadow: 3px 2px #FFF200;
 }
 
+/*GAME WITH ONE PLAYER*/
 
-
-.score{
+.gameWithOnePlayer .score{
     display: flex;
     align-items: center;
     gap: 50px;
     justify-content: center;
 }
-.yourScoreOnePlayer{
+.gameWithOnePlayer .yourScoreOnePlayer{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.aiScoreOnePlayer{
+.gameWithOnePlayer .aiScoreOnePlayer{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.winsAndLoses{
+.gameWithOnePlayer .winsAndLoses{
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.winsOne span{
+.gameWithOnePlayer .winsOne span{
     font-size: 30px;
 }
-.losesOne span{
+.gameWithOnePlayer .losesOne span{
     font-size: 30px;
 }
-.yourScoreOnePlayer{
+.gameWithOnePlayer .yourScoreOnePlayer{
     font-size: 30px;
 }
-.aiScoreOnePlayer{
+.gameWithOnePlayer .aiScoreOnePlayer{
     font-size: 30px;
 }
-.gameMain{
+.gameWithOnePlayer .gameMain{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.gameMain .gameImages{
+.gameWithOnePlayer .gameMain .gameImages{
     display: flex;
     gap: 300px;
 }
-.gameMain .firstImage , .secondImage{
+.gameWithOnePlayer .gameMain .firstImage , .secondImage{
     width: 400px;
 }
-.buttons{
+.gameWithOnePlayer .buttons{
     display: flex;
     gap: 100px;
 }
-.buttons button{
+.gameWithOnePlayer .buttons button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 1px solid gray;
+    background-color: #FFF200;
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*GAME WITH TWO PLAYERS*/
+
+.gameWithTwoPlayer .score{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+}
+.gameWithTwoPlayer .yourScoreOnePlayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameWithTwoPlayer .aiScoreOnePlayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gameWithTwoPlayer .winsAndLoses{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.gameWithTwoPlayer .winsOne span{
+    font-size: 30px;
+}
+.gameWithTwoPlayer .losesOne span{
+    font-size: 30px;
+}
+.gameWithTwoPlayer .turns span{
+    font-size: 30px;
+}
+.gameWithTwoPlayer .yourScoreOnePlayer{
+    font-size: 30px;
+}
+.gameWithTwoPlayer .aiScoreOnePlayer{
+    font-size: 30px;
+}
+.gameWithTwoPlayer .gameMain2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gameWithTwoPlayer .gameMain2 .gameImages{
+    display: flex;
+    gap: 300px;
+}
+.gameWithTwoPlayer .gameMain2 .firstImage2 , .secondImage2{
+    width: 400px;
+}
+.gameWithTwoPlayer .buttons{
+    display: flex;
+    gap: 100px;
+}
+.gameWithTwoPlayer .buttons button{
     width: 100px;
     height: 100px;
     border-radius: 50px;
