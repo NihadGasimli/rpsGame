@@ -26,6 +26,10 @@ const aiScoreOnePlayer = document.querySelector("#aiScoreOnePlayer");
 const yourScoreOnePlayer2 = document.querySelector("#yourScoreOnePLayer2");
 const aiScoreOnePlayer2 = document.querySelector("#aiScoreOnePlayer2");
 const turn = document.querySelector("#turn");
+const firstName = document.querySelector("#firstName");
+const secondName = document.querySelector("#secondName");
+const firstNameYY = document.querySelector("#firstNameYY")
+const secondNameYY = document.querySelector("#secondNameYY")
 
 const rps = "rps";
 start.addEventListener("click", function () {
@@ -40,11 +44,20 @@ onePlayer.addEventListener("click", function () {
     gameWithOnePlayer.style.display = "block";
 })
 
+var nameOfFirst = ""
+var nameOfSecond = "";
 twoPlayer.addEventListener("click", function () {
     selectPlayer.style.display = "none";
     description.style.display = "none";
     heading.style.display = "none";
     gameWithTwoPlayer.style.display = "block";
+    nameOfFirst += `${prompt("Please enter name of FIRST player")}`;
+    firstName.innerHTML = `${nameOfFirst} WINS :`;
+    firstNameYY.innerHTML = nameOfFirst;
+    nameOfSecond += `${prompt("Please enter name of SECOND player")}`;
+    secondName.innerHTML = `${nameOfSecond} WINS :`
+    secondNameYY.innerHTML = nameOfSecond;
+    turn.innerHTML = `${nameOfFirst}`;
 })
 
 rockBtn.addEventListener('click', function () {
@@ -68,18 +81,18 @@ function playOne(e) {
     const userChoice = e;
     const compChoice = randChoice();
 
-    selectWinner(userChoice,compChoice)
+    selectWinner(userChoice, compChoice)
 
-    selectImage(userChoice,randChoice());
+    selectImage(userChoice, randChoice());
 
-    if(userr === 3){
+    if (userr === 3) {
         winss++;
         userr = 0;
         compp = 0;
         firstImage.src = "./assets/images/rock-removebg-preview.png"
         secondImage.src = "./assets/images/rock-removebg-preview.png"
     }
-    else if(compp === 3){
+    else if (compp === 3) {
         losess++;
         userr = 0;
         compp = 0;
@@ -98,29 +111,29 @@ function randChoice() {
     return rps[index];
 }
 
-function selectImage(userChoice,compChoice){
-    if(userChoice === "p"){
+function selectImage(userChoice, compChoice) {
+    if (userChoice === "p") {
         firstImage.src = "./assets/images/paper-removebg-preview.png"
     }
-    else if(userChoice === "r"){
+    else if (userChoice === "r") {
         firstImage.src = "./assets/images/rock-removebg-preview.png"
     }
-    else if(userChoice === "s"){
+    else if (userChoice === "s") {
         firstImage.src = "./assets/images/scs-removebg-preview.png"
     }
 
-    if(compChoice === "r"){
+    if (compChoice === "r") {
         secondImage.src = "./assets/images/rock-removebg-preview.png"
     }
-    else if(compChoice === "p"){
+    else if (compChoice === "p") {
         secondImage.src = "./assets/images/paper-removebg-preview.png"
     }
-    else if(compChoice === "s"){
+    else if (compChoice === "s") {
         secondImage.src = "./assets/images/scs-removebg-preview.png"
     }
 }
 
-function selectWinner(userChoice,compChoice){
+function selectWinner(userChoice, compChoice) {
     if (userChoice === "r" && compChoice === "s") {
         userr++;
     } else if (userChoice === "s" && compChoice === "r") {
@@ -155,78 +168,81 @@ scsBtn2.addEventListener('click', function () {
     playTwo('s');
 });
 
-function playTwo(e){
-    if(!gamer){
-        user1Choice = e;
-        gamer = true;
-        user2Choice = "";
-        turn.innerHTML = "PLAYER 2"
+
+    firstName.innerHTML = `${nameOfFirst}`;
+    secondName.innerHTML = `${nameOfSecond}`;
+    function playTwo(e) {
+        if (!gamer) {
+            user1Choice = e;
+            gamer = true;
+            user2Choice = "";
+            turn.innerHTML = `${nameOfSecond}`;
+        }
+        else {
+            user2Choice = e;
+            gamer = false;
+            turn.innerHTML = `${nameOfFirst}`;
+        }
+
+        if (user1Choice !== "" && user2Choice !== "") {
+            selectWinner2(user1Choice, user2Choice);
+            selectImage2(user1Choice, user2Choice);
+        }
+
+        if (userr === 3) {
+            winss++;
+            userr = 0;
+            compp = 0;
+            firstImage2.src = "./assets/images/rock-removebg-preview.png"
+            secondImage2.src = "./assets/images/rock-removebg-preview.png"
+        }
+        else if (compp === 3) {
+            losess++;
+            userr = 0;
+            compp = 0;
+            firstImage2.src = "./assets/images/rock-removebg-preview.png"
+            secondImage2.src = "./assets/images/rock-removebg-preview.png"
+        }
+
+        wins2.innerHTML = winss;
+        loses2.innerHTML = losess;
+        yourScoreOnePlayer2.innerHTML = userr;
+        aiScoreOnePlayer2.innerHTML = compp;
     }
-    else{
-        user2Choice = e;
-        gamer = false;
-        turn.innerHTML = "PLAYER 1"
+    function selectImage2(user1Choice, user2Choice) {
+        if (user1Choice === "p") {
+            firstImage2.src = "./assets/images/paper-removebg-preview.png"
+        }
+        else if (user1Choice === "r") {
+            firstImage2.src = "./assets/images/rock-removebg-preview.png"
+        }
+        else if (user1Choice === "s") {
+            firstImage2.src = "./assets/images/scs-removebg-preview.png"
+        }
+
+        if (user2Choice === "r") {
+            secondImage2.src = "./assets/images/rock-removebg-preview.png"
+        }
+        else if (user2Choice === "p") {
+            secondImage2.src = "./assets/images/paper-removebg-preview.png"
+        }
+        else if (user2Choice === "s") {
+            secondImage2.src = "./assets/images/scs-removebg-preview.png"
+        }
     }
 
-    if(user1Choice!== "" && user2Choice !== ""){
-    selectWinner2(user1Choice,user2Choice);
-    selectImage2(user1Choice,user2Choice);
+    function selectWinner2(user1Choice, user2Choice) {
+        if (user1Choice === "r" && user2Choice === "s") {
+            userr++;
+        } else if (user1Choice === "s" && user2Choice === "r") {
+            userr++;
+        } else if (user1Choice === "p" && user2Choice === "r") {
+            userr++;
+        } else if (user1Choice === "r" && user2Choice === "p") {
+            compp++;
+        } else if (user1Choice === "s" && user2Choice === "p") {
+            compp++;
+        } else if (user1Choice === "p" && user2Choice === "s") {
+            compp++;
+        }
     }
-
-    if(userr === 3){
-        winss++;
-        userr = 0;
-        compp = 0;
-        firstImage2.src = "./assets/images/rock-removebg-preview.png"
-        secondImage2.src = "./assets/images/rock-removebg-preview.png"
-    }
-    else if(compp === 3){
-        losess++;
-        userr = 0;
-        compp = 0;
-        firstImage2.src = "./assets/images/rock-removebg-preview.png"
-        secondImage2.src = "./assets/images/rock-removebg-preview.png"
-    }
-
-    wins2.innerHTML = winss;
-    loses2.innerHTML = losess;
-    yourScoreOnePlayer2.innerHTML = userr;
-    aiScoreOnePlayer2.innerHTML = compp;
-}
-function selectImage2(user1Choice,user2Choice){
-    if(user1Choice === "p"){
-        firstImage2.src = "./assets/images/paper-removebg-preview.png"
-    }
-    else if(user1Choice === "r"){
-        firstImage2.src = "./assets/images/rock-removebg-preview.png"
-    }
-    else if(user1Choice === "s"){
-        firstImage2.src = "./assets/images/scs-removebg-preview.png"
-    }
-
-    if(user2Choice === "r"){
-        secondImage2.src = "./assets/images/rock-removebg-preview.png"
-    }
-    else if(user2Choice === "p"){
-        secondImage2.src = "./assets/images/paper-removebg-preview.png"
-    }
-    else if(user2Choice === "s"){
-        secondImage2.src = "./assets/images/scs-removebg-preview.png"
-    }
-}
-
-function selectWinner2(user1Choice,user2Choice){
-    if (user1Choice === "r" && user2Choice === "s") {
-        userr++;
-    } else if (user1Choice === "s" && user2Choice === "r") {
-        userr++;
-    } else if (user1Choice === "p" && user2Choice === "r") {
-        userr++;
-    } else if (user1Choice === "r" && user2Choice === "p") {
-        compp++;
-    } else if (user1Choice === "s" && user2Choice === "p") {
-        compp++;
-    } else if (user1Choice === "p" && user2Choice === "s") {
-        compp++;
-    }
-}
